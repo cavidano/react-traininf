@@ -1,26 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './App.css';
 
 class App extends Component {
 
-
   render() {
-
-    const name = "John Doe";
-
-    const loading = false;
-
-    const showName = true;
-
-    // if( loading ) {
-    //   return <h4>Loading...</h4>
-    // }
-
-
     return (
       <div className="App">
-        
-        { loading ? <h4>Loading...</h4> : <h1>Hello, { showName && name }</h1>}
+        <Fragment>
+          <h1 className="primary">Cool</h1>
+          <h2 className="cool">neat</h2>
+        </Fragment>
         
       </div>
     );
