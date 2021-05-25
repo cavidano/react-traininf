@@ -8,7 +8,7 @@ class App extends Component {
       <div className="App">
         <Fragment>
           <h1 className="primary">Cool</h1>
-          <h2 className="cool">neat</h2>
+          <h2 className="cool">Nice</h2>
         </Fragment>
         
       </div>
