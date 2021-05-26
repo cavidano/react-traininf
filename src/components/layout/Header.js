@@ -52,7 +52,7 @@ export class header extends Component {
 
                 </div>
 
-                <div className="primary-nav--inline--lg">
+                <div className="primary-nav--below--lg">
 
                     <div className="primary-nav__logo">
 

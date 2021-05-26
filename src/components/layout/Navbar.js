@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 
 export class Navbar extends Component {
+
     static defaultProps = {
         title: "Whoa"
     }
+    
     render() {
         return (
             <nav className="padding-y-4">
@@ -23,4 +25,4 @@ export class Navbar extends Component {
     }
 }
 
-export default Navbar
+export default Navbar;
