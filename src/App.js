@@ -11,8 +11,8 @@ export default class App extends Component {
     return (
       <div className="App">
         <Fragment>
-          <Header />
-          <Navbar />
+          <Header navType="inline" navBP="md" search={false} />
+          <Navbar title="Neat" />
         </Fragment> 
       </div>
     );
