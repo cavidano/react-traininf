@@ -1,21 +1,22 @@
 import React, { Component, Fragment } from 'react';
-import './App.css';
 
-class App extends Component {
+import Navbar from './components/layout/Navbar';
+import Header from './components/layout/Header';
+
+import './theme.css';
+
+export default class App extends Component {
 
   render() {
     return (
       <div className="App">
         <Fragment>
-          <h1 className="primary">Cool</h1>
-          <h2 className="cool">Nice</h2>
-        </Fragment>
-        
+          <Header />
+          <Navbar />
+        </Fragment> 
       </div>
     );
 
   }
 
 }
-
-export default App;
