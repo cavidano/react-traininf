@@ -5,14 +5,14 @@ import Header from './components/layout/Header';
 
 import './theme.css';
 
-export default class App extends Component {
+class App extends Component {
 
   render() {
     return (
       <div className="App">
         <Fragment>
           <Header navType="inline" navBP="md" search={false} />
-          <Navbar title="Neat" />
+          <Navbar title="Johnnie" />
         </Fragment> 
       </div>
     );
@@ -20,3 +20,5 @@ export default class App extends Component {
   }
 
 }
+
+export default App;

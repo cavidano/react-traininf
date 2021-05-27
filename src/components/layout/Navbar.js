@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export class Navbar extends Component {
 
     static defaultProps = {
-        title: "Whoa"
+        title: "Whoa!!!"
     }
     
     render() {
