@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-export class header extends Component {
+class header extends Component {
 
     static defaultProps = {
         navType: "inline",
@@ -103,41 +103,6 @@ export class header extends Component {
 
                 <a className="focusable-only" href="#skip-header-target">Skip Header</a>
 
-                <div className="theme-dark font-size-md">
-
-                    <div className="grid grid--cells-fit justify-content-between align-items-center">
-
-                        <div className="grid__cell container">
-                            <p className="truncate display-none display-block--md">Name of Office</p>
-                        </div>
-
-                        <nav className="grid__cell" aria-label="N Y C Resources">
-                            <ul className="nav nav--divider nav--horizontal">
-                                <li>
-                                    <a href="#1">
-                                        <span className="screen-reader-only">Search all n y c.gov</span>
-                                        <strong aria-hidden="true">Search all NYC.gov</strong>
-                                    </a>
-                                </li>
-                                <li>
-                                <a href="#1">
-                                    <span className="screen-reader-only">Visit NYC 3 1 1</span>
-                                    <span className="nyc_icon_311 font-size-lg"></span>
-                                </a>
-                                </li>
-                                <li>
-                                    <a href="#1" data-logo="brand">
-                                        <span className="screen-reader-only">Go to n y c.gov</span>
-                                        <span className="nyc_icon_bubble-logo font-size-lg"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-
-                    </div>
-
-                </div>
-
                 <div className={`primary-nav--${ navType }--${ navBP }`}>
 
                     <div className="primary-nav__logo">
@@ -149,20 +114,6 @@ export class header extends Component {
                     <nav className="primary-nav__menu" aria-label="navigation" id="primary-menu">
 
                         <ul>
-                            <li>
-                                <a href="#1" data-toggle="dropdown">Dropdown</a>
-                                <ul className="nav__dropdown">
-                                    <li>
-                                        <a href="#1">Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#1">Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#1">Link</a>
-                                    </li>
-                                </ul>
-                            </li>
                             <li>
                                 <a href="#1">Link</a>
                             </li>
@@ -199,7 +150,7 @@ export class header extends Component {
                 </div>
 
             </header>
-        )
+        );
     }
 }
 
