@@ -98,7 +98,6 @@ class header extends Component {
         );
 
         return (
-
             <header className="box-shadow-1 z-index-900" id="global-header">
 
                 <a className="focusable-only" href="#skip-header-target">Skip Header</a>
