@@ -14,8 +14,9 @@ class TitleBar extends Component {
     render() {
         return (
             <header className="theme-primary padding-y-3">
+
                 <div className="container narrow text-align-center">
-                  <h1>{ this.props.title }</h1>  
+                    <h1>{ this.props.title }</h1>  
                 </div>
                 
             </header>
