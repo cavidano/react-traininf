@@ -14,7 +14,7 @@ class App extends Component {
       <div className="App">
         <Fragment>
           <Header navType="inline" navBP="md" search={false} />
-          <TitleBar title="Hello, Carl" />
+          <TitleBar title="Github Users" />
           <Users />
           <Navbar title="Johnnie" />
         </Fragment> 

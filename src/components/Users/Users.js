@@ -29,7 +29,7 @@ class Users extends Component {
     
     render() {
         return (
-            <div className="container narrow">
+            <div className="container medium cool margin-y-4">
                 { this.state.users.map(user => (
                     <User key={ user.id } user={ user } />
                 )) }

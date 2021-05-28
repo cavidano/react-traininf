@@ -134,11 +134,7 @@ class header extends Component {
                             <span className="nyc_icon_menu" aria-hidden="true"></span>
                         </button>
                         
-                        <div className="button-group">
-                            <a className="button" href="#1">
-                                Sign In  
-                            </a>
-                            
+                        <div className="button-group">                            
                             <button className="button button--icon-only" aria-label="Language" data-modal-open="global-language">
                                 <span className="nyc_icon_language" aria-hidden="true"></span>
                             </button>

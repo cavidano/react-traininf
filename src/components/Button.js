@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 export class Button extends Component {
 
     static defaultProps = {
-        title: "Action"
+        title: 'Action',
+        link_url: 'https://google.com'
     }
 
     static propTypes = {
@@ -12,13 +13,14 @@ export class Button extends Component {
     }
     
     render() {
+
+        const { title, link_url } = this.props;
+
         return (
             <Fragment>
-                <a className="button" href="#1">
-                    { this.props.title }
-
+                <a className="button" href={ link_url }>
+                   My ID is: { title }
                 </a>
-                
             </Fragment>
         )
     }
