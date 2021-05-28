@@ -1,21 +1,13 @@
 import React, { Component } from 'react';
 
-import Button from '../components/Button';
+import Button from '../Button';
 
-class Card extends Component {
-
-    state = {
-        date: new Date(),
-        id: 'id',
-        login: 'mojombo',
-        avatar_url: 'https://avatars.githubusercontent.com/u/1?v=4',
-        html_url: 'https://github.com/mojombo'
-    };
+class User extends Component {
 
     render() {
 
         // Destructuring?
-        const { date, login, avatar_url, html_url } = this.state;
+        const { id, login, avatar_url, html_url } = this.props.user;
 
         return (
             <div className="container narrow margin-y-5">
@@ -23,7 +15,7 @@ class Card extends Component {
                 <div className="card border">
 
                     <div className="card__head border-bottom">
-                        <p>{ date.toLocaleTimeString().toLowerCase() }</p>
+                        <p>{ id }</p>
                     </div>
 
                     <img src={ avatar_url } alt="Placeholder" />
@@ -54,4 +46,4 @@ class Card extends Component {
     }
 }
 
-export default Card
+export default User;

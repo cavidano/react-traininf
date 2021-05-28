@@ -14,7 +14,7 @@ export class Button extends Component {
     render() {
         return (
             <Fragment>
-                <a class="button" href="#1">
+                <a className="button" href="#1">
                     { this.props.title }
 
                 </a>
