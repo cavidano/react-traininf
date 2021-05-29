@@ -28,7 +28,7 @@ const User = (props) => {
             <div className="card__foot border-top font-size-sm">
                 <ul className="nav nav--horizontal justify-content-between">
                     <li>
-                        <Button title={id} />
+                        <Button title="Cool" />
                     </li>
                     <li>
                         <a className="button button--outline border-radius-pill" href={ html_url }>View Profile</a>
