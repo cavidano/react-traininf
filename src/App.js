@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    
+
     this.setState({ loading: true });
 
     const res = await axios
@@ -34,7 +34,7 @@ class App extends Component {
     return (
       <div className="App">
         <Fragment>
-          <Header navType="inline" navBP="md" search={false} />
+          <Header navType="inline" navBP="md" search={true} />
           <TitleBar title="Github Users" />
           <Users loading={ this.state.loading } users={this.state.users} />
           <Navbar title="Johnnie" />
