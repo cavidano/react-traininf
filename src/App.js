@@ -43,12 +43,23 @@ class App extends Component {
     });
   }
 
+  clearUsers = async () => {
+
+    this.setState({ users: [], loading: false });
+    
+  }
+
   render() {
     return (
       <div className="App">
         <Fragment>
-          <Header navType="inline" navBP="md" search={true} />
-          <TitleBar title="Github Users" searchUsers={this.searchUsers} />
+          <Header navType="inline" navBP="md" search={false} />
+          <TitleBar
+            title="Github Users"
+            searchUsers={this.searchUsers}
+            clearUsers={this.clearUsers}
+            showClear={this.state.users.length > 0 ? true : false}
+          />
           <Users loading={ this.state.loading } users={this.state.users} />
           <Navbar title="Johnnie" />
         </Fragment> 

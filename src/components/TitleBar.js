@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class TitleBar extends Component {
+
     
     static defaultProps = {
         title: "Header"
     }
 
     static propTypes = {
-        title: PropTypes.string.isRequired
+        title: PropTypes.string.isRequired,
+        searchUsers: PropTypes.func.isRequired,
+        clearUsers: PropTypes.func.isRequired,
+        showClear: PropTypes.bool.isRequired,
     }
 
     state = {
@@ -28,7 +32,12 @@ class TitleBar extends Component {
     }
 
     render() {
+        
+        const {showClear, clearUsers} = this.props;
+
         return (
+
+
             <header className="theme-light padding-y-3">
 
                 <div className="container narrow text-align-center">
@@ -44,11 +53,19 @@ class TitleBar extends Component {
                             
                             <span className="form-entry__field__input">
                                 <input type="text" name="text" value={ this.state.text } onChange={ this.onChange } />
+                                
+                                { showClear && (
+                                    <button class="button button--icon-only" onClick={ clearUsers } type="button">
+                                        <span class="nyc_icon_close"></span>
+                                    </button>
+                                ) }        
+
                                 <button className="button button--icon-only" type="submit" aria-label="Home">
                                     <span className="nyc_icon_search" aria-hidden="true"></span>
                                 </button>
+                                
                             </span>
-
+                            
                         </form>
 
                     </div>
