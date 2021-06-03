@@ -55,8 +55,8 @@ class TitleBar extends Component {
                                 <input type="text" name="text" value={ this.state.text } onChange={ this.onChange } />
                                 
                                 { showClear && (
-                                    <button class="button button--icon-only" onClick={ clearUsers } type="button">
-                                        <span class="nyc_icon_close"></span>
+                                    <button className="button button--icon-only" onClick={ clearUsers } type="button">
+                                        <span className="nyc_icon_close"></span>
                                     </button>
                                 ) }        
 
