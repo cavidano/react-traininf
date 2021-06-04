@@ -37,7 +37,6 @@ class TitleBar extends Component {
 
         return (
 
-
             <header className="theme-light padding-y-3">
 
                 <div className="container narrow text-align-center">
@@ -70,7 +69,6 @@ class TitleBar extends Component {
 
                     </div>
                 </div>
-
                 
             </header>
         );
