@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class TitleBar extends Component {
-
-    
+ 
     static defaultProps = {
         title: "Header"
     }
@@ -22,7 +21,7 @@ class TitleBar extends Component {
     onSubmit = (e) => {
         e.preventDefault();
         this.props.searchUsers(this.state.text);
-        this.setState({ text: '' })
+        this.setState({ text: '' });
     }
 
     onChange = (e) => {

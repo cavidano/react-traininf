@@ -1,13 +1,23 @@
 import React, { Component, Fragment } from 'react';
 
+// Components
+
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import TitleBar from './components/TitleBar';
 import Users from './components/Users/Users';
 
+// Axios
+
 import axios from 'axios';
 
+// Theme CSS
+
 import './theme.css';
+
+//////////////////////////////////////////////
+// App Component
+//////////////////////////////////////////////
 
 class App extends Component {
 
@@ -18,15 +28,15 @@ class App extends Component {
 
   async componentDidMount() {
 
-    this.setState({ loading: true });
+    // this.setState({ loading: true });
 
-    const res = await axios
-      .get(`https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
+    // const res = await axios
+    //   .get(`https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
 
-    this.setState({
-      users: res.data,
-      loading: false
-    });
+    // this.setState({
+    //   users: res.data,
+    //   loading: false
+    // });
 
   }
 
