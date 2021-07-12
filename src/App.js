@@ -54,9 +54,7 @@ class App extends Component {
   }
 
   clearUsers = async () => {
-
     this.setState({ users: [], loading: false });
-    
   }
 
   render() {
@@ -65,7 +63,7 @@ class App extends Component {
         <Fragment>
           <Header navType="inline" navBP="md" search={false} />
           <TitleBar
-            title="Github Users"
+            title="Search Github Users"
             searchUsers={this.searchUsers}
             clearUsers={this.clearUsers}
             showClear={this.state.users.length > 0 ? true : false}

@@ -36,10 +36,10 @@ class TitleBar extends Component {
 
         return (
 
-            <header className="theme-light padding-y-3">
+            <header className="theme-dark padding-y-4">
 
                 <div className="container narrow text-align-center">
-                    <h1>{this.props.title}</h1>
+                    <h1 className="h2">{this.props.title}</h1>
 
                     <div className="form-entry font-size-md">
 
