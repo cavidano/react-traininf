@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+// Button
+
+import Button from './Button';
+
 class SearchBar extends Component {
  
     static defaultProps = {
@@ -65,6 +69,10 @@ class SearchBar extends Component {
                             </span>
                             
                         </form>
+
+                        <div className="container margin-y-3">
+                            <Button class_list="button theme-white" />
+                        </div>
 
                     </div>
                 </div>

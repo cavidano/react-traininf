@@ -5,7 +5,8 @@ class Button extends Component {
 
     static defaultProps = {
         title: 'Action',
-        link_url: 'https://google.com'
+        link_url: 'https://gobutton jhghjkogle.com',
+        class_list: ''
     }
 
     static propTypes = {
@@ -14,11 +15,11 @@ class Button extends Component {
     
     render() {
 
-        const { title, link_url } = this.props;
+        const { title, link_url, class_list } = this.props;
 
         return (
             <Fragment>
-                <a className="button" href={ link_url }>
+                <a className={ class_list } href={ link_url }>
                    My ID is: { title }
                 </a>
             </Fragment>
