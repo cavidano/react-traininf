@@ -54,12 +54,12 @@ class TitleBar extends Component {
                                 
                                 { showClear && (
                                     <button className="button button--icon-only" onClick={ clearUsers } type="button">
-                                        <span className="nyc_icon_close"></span>
+                                        <span className="icon_close"></span>
                                     </button>
                                 ) }        
 
                                 <button className="button button--icon-only" type="submit" aria-label="Home">
-                                    <span className="nyc_icon_search" aria-hidden="true"></span>
+                                    <span className="icon_search" aria-hidden="true"></span>
                                 </button>
                                 
                             </span>

@@ -29,7 +29,7 @@ const Header = (props) => {
                 <span className="form-entry__field__input">
                     <input type="text" name="search-example" id="search-example" placeholder="Search" />
                     <button className="button button--icon-only" type="button" aria-label="Home">
-                        <span className="nyc_icon_search" aria-hidden="true"></span>
+                        <span className="icon_search" aria-hidden="true"></span>
                     </button>
                 </span>
             
@@ -72,12 +72,12 @@ const Header = (props) => {
                 <div className="primary-nav__actions">
 
                     <button className="button button--icon-only mobile-menu-toggle" aria-label="Menu" data-toggle="collapse" data-target="#primary-menu">
-                        <span className="nyc_icon_menu" aria-hidden="true"></span>
+                        <span className="icon_menu" aria-hidden="true"></span>
                     </button>
                     
                     <div className="button-group">                            
                         <button className="button button--icon-only" aria-label="Language" data-modal-open="global-language">
-                            <span className="nyc_icon_language" aria-hidden="true"></span>
+                            <span className="icon_language" aria-hidden="true"></span>
                         </button>
                     </div>
                 
