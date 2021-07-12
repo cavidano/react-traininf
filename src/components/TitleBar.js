@@ -39,21 +39,21 @@ class TitleBar extends Component {
             <header className="theme-light padding-y-3">
 
                 <div className="container narrow text-align-center">
-                    <h1>{ this.props.title }</h1>
+                    <h1>{this.props.title}</h1>
 
                     <div className="form-entry font-size-md">
 
-                        <form className="form-entry__field" onSubmit={ this.onSubmit }>
+                        <form className="form-entry__field" onSubmit={this.onSubmit}>
 
                             <label className="form-entry__field__label screen-reader-only" htmlFor="search-example">
                                 Search
                             </label>
                             
                             <span className="form-entry__field__input">
-                                <input type="text" name="text" value={ this.state.text } onChange={ this.onChange } />
+                                <input type="text" name="text" value={this.state.text} onChange={this.onChange} />
                                 
                                 { showClear && (
-                                    <button className="button button--icon-only" onClick={ clearUsers } type="button">
+                                    <button className="button button--icon-only" onClick={clearUsers} type="button">
                                         <span className="icon_close"></span>
                                     </button>
                                 ) }        
