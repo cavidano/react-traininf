@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-export class Button extends Component {
+class Button extends Component {
 
     static defaultProps = {
         title: 'Action',
@@ -26,4 +26,4 @@ export class Button extends Component {
     }
 }
 
-export default Button
+export default Button;

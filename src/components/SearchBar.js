@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class TitleBar extends Component {
+class SearchBar extends Component {
  
     static defaultProps = {
         title: "Header"
@@ -74,4 +74,4 @@ class TitleBar extends Component {
     }
 }
 
-export default TitleBar;
+export default SearchBar;

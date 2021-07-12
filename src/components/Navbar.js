@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class Navbar extends Component {
 
     static defaultProps = {
-        title: "Whoa!!!"
+        linkTitle: "Whoa!!!"
     }
     
     render() {
@@ -11,13 +11,13 @@ class Navbar extends Component {
             <nav className="padding-y-4">
                 <ul className="nav nav--horizontal justify-content-center">
                     <li>
-                        <a href="#1">{ this.props.title }</a>
+                        <a href="#1">{this.props.linkTitle}</a>
                     </li>
                     <li>
-                        <a href="#1">{ this.props.title }</a>
+                        <a href="#1">{this.props.linkTitle}</a>
                     </li>
                     <li>
-                        <a href="#1">{ this.props.title }</a>
+                        <a href="#1">{this.props.linkTitle}</a>
                     </li>
                 </ul>
             </nav>

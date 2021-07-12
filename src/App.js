@@ -4,7 +4,7 @@ import React, { Component, Fragment } from 'react';
 
 import Navbar from './components/Navbar';
 import Header from './components/Header';
-import TitleBar from './components/TitleBar';
+import SearchBar from './components/SearchBar';
 import Users from './components/Users/Users';
 
 // Axios
@@ -57,19 +57,22 @@ class App extends Component {
     this.setState({ users: [], loading: false });
   }
 
+  // lifecycle method
+
   render() {
+    
     return (
       <div className="App">
         <Fragment>
           <Header navType="inline" navBP="md" search={false} />
-          <TitleBar
+          <SearchBar
             title="Search Github Users"
             searchUsers={this.searchUsers}
             clearUsers={this.clearUsers}
             showClear={this.state.users.length > 0 ? true : false}
           />
           <Users loading={ this.state.loading } users={this.state.users} />
-          <Navbar title="Johnnie" />
+          <Navbar linkTitle="Link" />
         </Fragment> 
       </div>
     );
