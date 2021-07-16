@@ -40,7 +40,7 @@ class SearchBar extends Component {
 
         return (
 
-            <header className="theme-dark padding-y-4">
+            <header className="theme-primary padding-y-4">
 
                 <div className="container narrow text-align-center">
                     <h1 className="h2">{this.props.title}</h1>
