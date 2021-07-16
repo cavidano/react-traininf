@@ -53,13 +53,18 @@ class App extends Component {
     });
   }
 
-  clearUsers = async () => {
-    this.setState({ users: [], loading: false });
+  clearUsers = () => {
+    this.setState({
+      users: [],
+      loading: false
+    });
   }
 
   // lifecycle method
 
   render() {
+
+    const {users, loading} = this.state;
     
     return (
       <div className="App">
@@ -71,7 +76,7 @@ class App extends Component {
             clearUsers={this.clearUsers}
             showClear={this.state.users.length > 0 ? true : false}
           />
-          <Users loading={this.state.loading} users={this.state.users} />
+          <Users loading={loading} users={users} />
           <Navbar linkTitle="Link" />
         </Fragment> 
       </div>

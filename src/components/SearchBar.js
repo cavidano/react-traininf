@@ -8,15 +8,14 @@ import Button from './Button';
 class SearchBar extends Component {
  
     static defaultProps = {
-        title: "Header",
-        showClear: false
+        title: "Header"
     }
 
     static propTypes = {
         title: PropTypes.string.isRequired,
         searchUsers: PropTypes.func.isRequired,
         clearUsers: PropTypes.func.isRequired,
-        showClear: PropTypes.bool.isRequired,
+        showClear: PropTypes.bool.isRequired
     }
 
     state = {
@@ -37,14 +36,14 @@ class SearchBar extends Component {
 
     render() {
         
-        const {showClear, clearUsers} = this.props;
+        const {showClear, clearUsers, title} = this.props;
 
         return (
 
             <header className="theme-primary padding-y-4">
 
                 <div className="container narrow text-align-center">
-                    <h1 className="h2">{this.props.title}</h1>
+                    <h1 className="h2">{title}</h1>
 
                     <div className="form-entry font-size-md">
 
@@ -58,8 +57,11 @@ class SearchBar extends Component {
                                 <input type="text" name="text" value={this.state.text} onChange={this.onChange} />
                                 
                                 { showClear && (
-                                    <button className="button button--icon-only" onClick={clearUsers} type="button">
-                                        <span className="icon_close"></span>
+                                    <button
+                                        className="button button--icon-only"
+                                        onClick={clearUsers}
+                                        type="button">
+                                            <span className="icon_close"></span>
                                     </button>
                                 ) }        
 
