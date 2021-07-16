@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import Users from './components/Users/Users';
+import User from './components/Users/User';
 import Alert from './components/Alert';
 
 import About from './components/About';
@@ -27,6 +28,7 @@ class App extends Component {
 
   state = {
     users: [],
+    user: {},
     loading: false,
     alert: null
   }
@@ -45,6 +47,8 @@ class App extends Component {
 
   }
 
+  // Search Users
+
   searchUsers = async (text) => {
 
     this.setState({ loading: true });
@@ -58,11 +62,28 @@ class App extends Component {
     });
   }
 
+  // Clear Users
+
   clearUsers = () => {
     this.setState({
       users: [],
       loading: false
     });
+  }
+
+  // Get a single user
+
+  getUser = async (username) => {
+    this.setState({ loading: true });
+    
+    const res = await axios
+      .get(`https://api.github.com/users/${username}?&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
+
+    this.setState({
+      user: res.data,
+      loading: false
+    });
+
   }
 
   setAlert = (message, type) => {
@@ -78,7 +99,7 @@ class App extends Component {
 
   render() {
 
-    const {users, loading} = this.state;
+    const { users, user, loading } = this.state;
     
     return (
       <Router>
@@ -100,6 +121,10 @@ class App extends Component {
                 </Fragment>
               )} />
               <Route exact path="/about" component={About} />
+              <Route exact path="/user/:login" render={props => (
+                <User { ...props} getUser={this.getUser} user={user} loading={loading} />
+
+              )} />
 
             </Switch>
             <Navbar linkTitle="Link" />

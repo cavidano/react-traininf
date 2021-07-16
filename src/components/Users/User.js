@@ -1,45 +1,50 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Spinner from '../Spinner/Spinner.js';
+import PropTypes from 'prop-types';
 
-import Button from '../Button';
+import { Link } from 'react-router-dom';
 
-const User = (props) => {
 
-    // Destructuring?
-    const { id, login, avatar_url, html_url } = props.user;
 
-    return (
+class User extends Component {
+    componentDidMount(){
+        this.props.getUser(this.props.match.params.login);
+    }
 
-        <div className="card border">
+    static propTypes = {
+        loading: PropTypes.bool,
+        user: PropTypes.object.isRequired,
+        getUser: PropTypes.func.isRequired,
+    }
 
-            <div className="card__head">
-                <p>{ id }</p>
-            </div>
+    render() {
 
-            <img src={ avatar_url } alt="Placeholder" />
+        const {
+            name,
+            avatar_url, 
+            bio, 
+            blog, 
+            login, 
+            followers,
+            following,
+            public_repos,
+            public_gists,
+            hireable
+        } = this.props.user;
 
-            <div className="card__body">
-                <h2 className="h4">{ login }</h2>
+        const { loading } = this.props;
+
+        if(loading) return <Spinner />;
+
+        return (
+            <div className="container narrow padding-y-4">
+                <Link className="button" to="/">Back to Search</Link>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa obcaecati autem,
-                    ex facilis labore reiciendis.
+                     {name}
                 </p>
             </div>
-
-            <div className="card__foot border-top font-size-sm">
-                <ul className="nav nav--horizontal justify-content-between">
-                    <li>
-                        <Button />
-                    </li>
-                    <li>
-                        <a className="button button--outline border-radius-pill" href={ html_url }>View Profile</a>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-    
-    );
-    
+        )
+    }
 }
 
 export default User;

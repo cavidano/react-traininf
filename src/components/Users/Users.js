@@ -1,5 +1,5 @@
 import React from 'react';
-import User from './User';
+import UserItem from './UserItem.js';
 import Spinner from '../Spinner/Spinner.js';
 import PropTypes from 'prop-types';
 
@@ -11,7 +11,7 @@ const Users = ({ users, loading }) => {
         return (
             <div className="container medium cool margin-y-4">
                 { users.map(user => (
-                    <User key={ user.id } user={ user } />
+                    <UserItem key={ user.id } user={ user } />
                 )) }
             </div>
         )
