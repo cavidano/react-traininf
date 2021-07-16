@@ -8,7 +8,8 @@ import Button from './Button';
 class SearchBar extends Component {
  
     static defaultProps = {
-        title: "Header"
+        title: "Header",
+        showClear: false
     }
 
     static propTypes = {

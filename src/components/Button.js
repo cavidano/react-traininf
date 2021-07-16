@@ -10,13 +10,13 @@ class Button extends Component {
     }
 
     static propTypes = {
-        title: PropTypes.string.isRequired
+        title: PropTypes.string.isRequired,
+        link_url: PropTypes.string.isRequired,
     }
     
     render() {
-
         const { title, link_url, class_list } = this.props;
-
+        
         return (
             <Fragment>
                 <a className={ class_list } href={ link_url }>

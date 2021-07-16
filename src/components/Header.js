@@ -94,7 +94,7 @@ const Header = (props) => {
 }
 
 Header.defaultProps = {
-    navType: "inline",
+    navType: "below",
     navBP: "lg",
     search: false
 }
