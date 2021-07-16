@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import Users from './components/Users/Users';
+import Alert from './components/Alert';
 
 // Axios
 
@@ -23,7 +24,8 @@ class App extends Component {
 
   state = {
     users: [],
-    loading: false
+    loading: false,
+    alert: null
   }
 
   async componentDidMount() {
@@ -60,6 +62,12 @@ class App extends Component {
     });
   }
 
+  setAlert = (message, type) => {
+    this.setState({
+      alert: {message, type}
+    })
+  }
+
   // lifecycle method
 
   render() {
@@ -70,11 +78,13 @@ class App extends Component {
       <div className="App">
         <Fragment>
           <Header navType="inline" navBP="md" search={false} />
+          <Alert alert={this.state.alert} />
           <SearchBar
             title="Search Github Users"
             searchUsers={this.searchUsers}
             clearUsers={this.clearUsers}
             showClear={this.state.users.length > 0 ? true : false}
+            setAlert={this.setAlert}
           />
           <Users loading={loading} users={users} />
           <Navbar linkTitle="Link" />
