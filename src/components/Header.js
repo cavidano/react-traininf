@@ -1,6 +1,9 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
+import { Link } from 'react-router-dom';
+
+
 const Header = (props) => {
 
     const logo = (
@@ -50,7 +53,7 @@ const Header = (props) => {
             <div className={`primary-nav--${ navType }--${ navBP }`}>
 
                 <div className="primary-nav__logo">
-                    <a href="#1" title="Home" data-logo="brand">
+                    <a href="/" title="Home" data-logo="brand">
                         { logo }
                     </a>
                 </div>
@@ -59,13 +62,10 @@ const Header = (props) => {
 
                     <ul>
                         <li>
-                            <a href="#1">Link</a>
+                            <Link to="/">Home</Link>
                         </li>
                         <li>
-                            <a href="#1">Link</a>
-                        </li>
-                        <li>
-                            <a href="#1">Link</a>
+                            <Link to="/about">About</Link>
                         </li>
                     </ul>
 
