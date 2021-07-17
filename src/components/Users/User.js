@@ -42,6 +42,7 @@ class User extends Component {
                         <span className="button__text">Back to Search</span>
                     </Link>
                 </div>
+                
                 <div className="container narrow padding-y-4">
                     <img className="width-100 border-radius" src={avatar_url} alt={`${name} profile picture`} />
                 </div>
