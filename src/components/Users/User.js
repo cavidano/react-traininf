@@ -1,10 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Spinner from '../Spinner/Spinner.js';
 import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
-
-
 
 class User extends Component {
     componentDidMount(){
@@ -37,12 +35,27 @@ class User extends Component {
         if(loading) return <Spinner />;
 
         return (
-            <div className="container narrow padding-y-4">
-                <Link className="button" to="/">Back to Search</Link>
-                <p>
-                     {name}
-                </p>
-            </div>
+            <article>
+                <div className="container narrow padding-y-4">
+                    <Link className="button button--has-icon font-size-md" to="/">                    
+                        <span className="icon_chevron-left button__icon"></span>
+                        <span className="button__text">Back to Search</span>
+                    </Link>
+                </div>
+                <div className="container narrow padding-y-4">
+                    <img className="width-100 border-radius" src={avatar_url} alt={`${name} profile picture`} />
+                </div>
+
+                <div className="container narrow padding-y-4">
+                    {
+                        bio &&
+                        <Fragment>
+                            <h1 className="h2">About {name}</h1>
+                            <p>{bio}</p>
+                        </Fragment>
+                    }
+                </div>
+            </article>
         )
     }
 }
