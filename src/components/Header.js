@@ -1,8 +1,6 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
-
 import { Link } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 
 const Header = (props) => {
 
@@ -62,7 +60,7 @@ const Header = (props) => {
 
                     <ul>
                         <li>
-                            <Link to="/">Home</Link>
+                            <Link to="/">Search</Link>
                         </li>
                         <li>
                             <Link to="/about">About</Link>
