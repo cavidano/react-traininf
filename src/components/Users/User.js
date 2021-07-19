@@ -26,7 +26,9 @@ class User extends Component {
 
         const {
             name,
+			company,
             avatar_url, 
+            html_url, 
             bio, 
             blog, 
             login, 
@@ -43,7 +45,7 @@ class User extends Component {
 
         return (
             <article>
-			
+
                 <div className="container narrow padding-y-4">
                     <Link className="button button--has-icon font-size-md" to="/">                    
                         <span className="icon_chevron-left button__icon"></span>
@@ -51,20 +53,49 @@ class User extends Component {
                     </Link>
                 </div>
 
-                <div className="container narrow padding-y-4">
-                    <img className="width-100 border-radius" src={avatar_url} alt={`${name} profile picture`} />
-                </div>
+                <div className="container narrow padding-y-3">
+
+					<div className="backdrop theme-dark border-radius--lg">
+
+						<div className="backdrop__image gradient-veneer-bottom">
+							<img src={avatar_url} alt={`${name} profile picture`} />
+						</div>
+
+						<div className="backdrop__cover justify-content-end border-bottom">
+
+							<div className="container margin-y-3">
+								<p className="badge text-color-secondary">
+									{hireable ?
+									<span class="badge__icon icon_checkbox-checked" aria-hidden="true"></span>
+									:
+									<span class="badge__icon icon_close" aria-hidden="true"></span>
+									}
+									<span className="badge__text">
+										Hirable
+									</span>
+								</p>
+							</div>
+
+						</div>
+
+					</div>
+ 
+                 </div>
 
                 <div className="container narrow padding-y-4">
-                    {
-                        bio &&
-                        <Fragment>
-                            <h1 className="h2">About {name}</h1>
-                            <p>{bio}</p>
-
-                            <div className="cool">
-                            </div>
-                        </Fragment>
+                    {bio &&
+					<Fragment>
+						<h1 className="h2">About {name}</h1>
+						<p>
+							{company ?
+							<strong>{company}</strong>
+							:
+							<strong>Independent</strong>
+							}
+						</p>
+						<p>{bio}</p>
+						<p><a href={html_url}>View Profile</a></p>
+					</Fragment>
                     }
                 </div>
 

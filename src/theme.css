@@ -13,3 +13,31 @@ a[aria-current="page"]{
     font-weight: bold !important;
 
 }
+
+/* Badge */
+
+.badge {
+    position: relative;
+    padding: 0.25em 0.5em;
+}
+
+.badge__text {
+    margin-left:0.25em;
+    margin-right:0.25em;
+}
+.badge::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;   
+
+    border-radius: inherit;
+
+    pointer-events: none;
+
+    background-color: currentColor;
+
+    opacity: var(--subtle-fill-opacity);    
+}
