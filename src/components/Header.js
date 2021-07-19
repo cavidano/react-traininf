@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const Header = (props) => {
@@ -60,10 +60,10 @@ const Header = (props) => {
 
                     <ul>
                         <li>
-                            <Link to="/">Search</Link>
+                            <NavLink exact to="/">Search</NavLink>
                         </li>
                         <li>
-                            <Link to="/about">About</Link>
+                            <NavLink exact to="/about">About</NavLink>
                         </li>
                     </ul>
 

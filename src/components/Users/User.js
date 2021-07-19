@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 class User extends Component {
+	
     componentDidMount(){
         this.props.getUser(this.props.match.params.login);
     }
