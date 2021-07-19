@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 // Components
 
 import Spinner from '../Spinner/Spinner.js';
+import Repos from '../Repos/Repos.js';
 
 //////////////////////////////////////////////
 // Component
@@ -14,12 +15,15 @@ class User extends Component {
 	
     componentDidMount(){
         this.props.getUser(this.props.match.params.login);
+        this.props.getUserRepos(this.props.match.params.login);
     }
 
     static propTypes = {
         loading: PropTypes.bool,
         user: PropTypes.object.isRequired,
+		repos: PropTypes.array.isRequired,
         getUser: PropTypes.func.isRequired,
+        getUserRepos: PropTypes.func.isRequired
     }
 
     render() {
@@ -39,7 +43,7 @@ class User extends Component {
             hireable
         } = this.props.user;
 
-        const { loading } = this.props;
+        const { loading, repos } = this.props;
 
         if(loading) return <Spinner />;
 
@@ -66,9 +70,9 @@ class User extends Component {
 							<div className="container margin-y-3">
 								<p className="badge text-color-secondary">
 									{hireable ?
-									<span class="badge__icon icon_checkbox-checked" aria-hidden="true"></span>
+									<span className="badge__icon icon_checkbox-checked" aria-hidden="true"></span>
 									:
-									<span class="badge__icon icon_close" aria-hidden="true"></span>
+									<span className="badge__icon icon_close" aria-hidden="true"></span>
 									}
 									<span className="badge__text">
 										Hirable
@@ -94,11 +98,13 @@ class User extends Component {
 							}
 						</p>
 						<p>{bio}</p>
-						<p><a href={html_url}>View Profile</a></p>
+						<p><a href="#1">View Profile</a></p>
 					</Fragment>
                     }
                 </div>
 
+
+				<Repos repos={repos} />
             </article>
         )
     }
