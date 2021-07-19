@@ -43,6 +43,7 @@ class User extends Component {
 
         return (
             <article>
+			
                 <div className="container narrow padding-y-4">
                     <Link className="button button--has-icon font-size-md" to="/">                    
                         <span className="icon_chevron-left button__icon"></span>
@@ -63,7 +64,6 @@ class User extends Component {
 
                             <div className="cool">
                             </div>
-                            
                         </Fragment>
                     }
                 </div>
