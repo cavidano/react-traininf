@@ -65,7 +65,8 @@ class App extends Component {
 
   // Clear Users
 
-  clearUsers = () => {
+  clearUsers = (e) => {
+    e.preventDefault();
     this.setState({
       users: [],
       loading: false

@@ -70,17 +70,13 @@ class SearchBar extends Component {
                                     </button>
                                 ) }        
 
-                                <button className="button button--icon-only" type="submit" aria-label="Home">
+                                <button className="button button--icon-only theme-white" type="submit" aria-label="Home">
                                     <span className="icon_search" aria-hidden="true"></span>
                                 </button>
                                 
                             </span>
                             
                         </form>
-
-                        <div className="container margin-y-3">
-                            <Button class_list="button theme-white" />
-                        </div>
 
                     </div>
                 </div>
