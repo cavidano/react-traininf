@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -11,41 +11,30 @@ import Repos from '../Repos/Repos.js';
 // Component
 //////////////////////////////////////////////
 
-class User extends Component {
+const User = ({user, loading, getUser, getUserRepos, repos, match}) => {
+
+    useEffect(() => {
+        getUser(match.params.login);
+        getUserRepos(match.params.login);
+        // eslint-disable-next-line
+    }, []);
 	
-    componentDidMount(){
-        this.props.getUser(this.props.match.params.login);
-        this.props.getUserRepos(this.props.match.params.login);
-    }
+    const {
+        name,
+        company,
+        avatar_url, 
+        html_url, 
+        bio, 
+        blog, 
+        login, 
+        followers,
+        following,
+        public_repos,
+        public_gists,
+        hireable
+    } = user;
 
-    static propTypes = {
-        loading: PropTypes.bool,
-        user: PropTypes.object.isRequired,
-		repos: PropTypes.array.isRequired,
-        getUser: PropTypes.func.isRequired,
-        getUserRepos: PropTypes.func.isRequired
-    }
-
-    render() {
-
-        const {
-            name,
-			company,
-            avatar_url, 
-            html_url, 
-            bio, 
-            blog, 
-            login, 
-            followers,
-            following,
-            public_repos,
-            public_gists,
-            hireable
-        } = this.props.user;
-
-        const { loading, repos } = this.props;
-
-        if(loading) return <Spinner />;
+    if(loading) return <Spinner />;
 
         return (
             <article>
@@ -117,7 +106,14 @@ class User extends Component {
 
             </article>
         )
-    }
+}
+
+User.propTypes = {
+    loading: PropTypes.bool,
+    user: PropTypes.object.isRequired,
+    repos: PropTypes.array.isRequired,
+    getUser: PropTypes.func.isRequired,
+    getUserRepos: PropTypes.func.isRequired
 }
 
 export default User;

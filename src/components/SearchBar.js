@@ -1,89 +1,75 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-// Button
-
-import Button from './Button';
-
-class SearchBar extends Component {
+const SearchBar = ({ title, searchUsers, showClear, clearUsers, setAlert }) => {
  
-    static defaultProps = {
-        title: "Header"
-    }
+    const [text, setText] = useState('');
 
-    static propTypes = {
-        title: PropTypes.string.isRequired,
-        searchUsers: PropTypes.func.isRequired,
-        clearUsers: PropTypes.func.isRequired,
-        showClear: PropTypes.bool.isRequired,
-        setAlert: PropTypes.func.isRequired
-    }
-
-    state = {
-        text: ''
-    }
-
-    onSubmit = (e) => {
+    const onSubmit = (e) => {
         e.preventDefault();
-        if (this.state.text === ''){
-            this.props.setAlert('Please enter something', 'warn')
+        if (text === ''){
+            setAlert('Please enter something', 'warn')
         } else {
-            this.props.searchUsers(this.state.text);
-            this.setState({ text: '' });
+            searchUsers(text);
+            setText('');
         }
     }
 
-    onChange = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
+    const onChange = (e) => {
+        setText(e.target.value);
     }
 
-    render() {
-        
-        const {showClear, clearUsers, title} = this.props;
+    return (
+        <header className="theme-primary padding-y-4">
 
-        return (
+            <div className="container narrow text-align-center">
+                <h1 className="h2">{title}</h1>
 
-            <header className="theme-primary padding-y-4">
+                <div className="form-entry font-size-md">
 
-                <div className="container narrow text-align-center">
-                    <h1 className="h2">{title}</h1>
+                    <form className="form-entry__field" onSubmit={onSubmit}>
 
-                    <div className="form-entry font-size-md">
-
-                        <form className="form-entry__field" onSubmit={this.onSubmit}>
-
-                            <label className="form-entry__field__label screen-reader-only" htmlFor="search-example">
-                                Search
-                            </label>
+                        <label className="form-entry__field__label screen-reader-only" htmlFor="search-example">
+                            Search
+                        </label>
+                        
+                        <span className="form-entry__field__input">
+                            <input type="text" name="text" value={text} onChange={onChange} />
                             
-                            <span className="form-entry__field__input">
-                                <input type="text" name="text" value={this.state.text} onChange={this.onChange} />
-                                
-                                { showClear && (
-                                    <button
-                                        className="button button--icon-only"
-                                        onClick={clearUsers}
-                                        type="button">
-                                            <span className="icon_close"></span>
-                                    </button>
-                                ) }        
-
-                                <button className="button button--icon-only theme-white" type="submit" aria-label="Home">
-                                    <span className="icon_search" aria-hidden="true"></span>
+                            { showClear && (
+                                <button
+                                    className="button button--icon-only"
+                                    onClick={clearUsers}
+                                    type="button">
+                                        <span className="icon_close"></span>
                                 </button>
-                                
-                            </span>
-                            
-                        </form>
+                            ) }        
 
-                    </div>
+                            <button className="button button--icon-only theme-white" type="submit" aria-label="Home">
+                                <span className="icon_search" aria-hidden="true"></span>
+                            </button>
+                            
+                        </span>
+                        
+                    </form>
+
                 </div>
-                
-            </header>
-        );
-    }
+            </div>
+            
+        </header>
+    );
+}
+
+SearchBar.defaultProps = {
+    title: "Header"
+}
+
+SearchBar.propTypes = {
+    title: PropTypes.string.isRequired,
+    searchUsers: PropTypes.func.isRequired,
+    clearUsers: PropTypes.func.isRequired,
+    showClear: PropTypes.bool.isRequired,
+    setAlert: PropTypes.func.isRequired
 }
 
 export default SearchBar;
