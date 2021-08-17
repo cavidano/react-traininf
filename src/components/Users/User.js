@@ -34,6 +34,8 @@ const User = ({user, loading, getUser, getUserRepos, repos, match}) => {
         hireable
     } = user;
 
+    const { loading } = this.props;
+
     if(loading) return <Spinner />;
 
         return (
