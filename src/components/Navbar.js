@@ -8,7 +8,7 @@ class Navbar extends Component {
     
     render() {
         return (
-            <nav className="padding-y-4 display-none">
+            <nav className="padding-y-4">
                 <ul className="nav nav--horizontal justify-content-center">
                     <li>
                         <a href="#1">{this.props.linkTitle}</a>

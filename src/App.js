@@ -120,7 +120,7 @@ class App extends Component {
     
     return (
       <Router>
-        <div className="App" style={{ minHeight: '100vh'}}>
+        <div className="App">
           <Fragment>
             <Header navType="inline" navBP="md" search={false} />
             <Alert alert={this.state.alert} />
@@ -150,7 +150,6 @@ class App extends Component {
               )} />
 
             </Switch>
-            
             <Navbar linkTitle="Link" />
             
           </Fragment> 
