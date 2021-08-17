@@ -36,12 +36,29 @@ const SearchBar = ({ title, searchUsers, showClear, clearUsers, setAlert }) => {
                         <span className="form-entry__field__input">
                             <input type="text" name="text" value={text} onChange={onChange} />
                             
+<<<<<<< HEAD
                             { showClear && (
                                 <button
                                     className="button button--icon-only"
                                     onClick={clearUsers}
                                     type="button">
                                         <span className="icon_close"></span>
+=======
+                            <span className="form-entry__field__input">
+                                <input type="text" name="text" value={this.state.text} onChange={this.onChange} />
+                                
+                                { showClear && (
+                                    <button
+                                        className="button button--icon-only"
+                                        onClick={clearUsers}
+                                        type="button">
+                                            <span className="icon_close"></span>
+                                    </button>
+                                ) }        
+
+                                <button className="button button--icon-only" type="submit" aria-label="Home">
+                                    <span className="icon_search" aria-hidden="true"></span>
+>>>>>>> parent of 2463a0d (before DORIS presentation)
                                 </button>
                             ) }        
 
@@ -53,6 +70,14 @@ const SearchBar = ({ title, searchUsers, showClear, clearUsers, setAlert }) => {
                         
                     </form>
 
+<<<<<<< HEAD
+=======
+                        <div className="container margin-y-3">
+                            <Button class_list="button theme-white" />
+                        </div>
+
+                    </div>
+>>>>>>> parent of 2463a0d (before DORIS presentation)
                 </div>
             </div>
             

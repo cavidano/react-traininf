@@ -4,13 +4,14 @@ import PropTypes from 'prop-types';
 class Button extends Component {
 
     static defaultProps = {
-        title: 'Clear Search',
+        title: 'Action',
+        link_url: 'https://gobutton jhghjkogle.com',
         class_list: ''
     }
 
     static propTypes = {
         title: PropTypes.string.isRequired,
-        class_list: PropTypes.string.isRequired
+        link_url: PropTypes.string.isRequired,
     }
     
     render() {
@@ -18,9 +19,9 @@ class Button extends Component {
         
         return (
             <Fragment>
-                <button className={ class_list }>
-                   { title }
-                </button>
+                <a className={ class_list } href={ link_url }>
+                   My ID is: { title }
+                </a>
             </Fragment>
         )
     }

@@ -94,18 +94,8 @@ const User = ({user, loading, getUser, getUserRepos, repos, match}) => {
                     }
                 </div>
 
-                <hr />
 
-                <div className="container narrow padding-y-4">
-
-                    <h2 className="h5">User Repos:</h2>
-
-                    <ul className="nav nav--divider text-color-link">
-                        <Repos repos={repos} />
-                    </ul>
-
-                </div>
-
+				<Repos repos={repos} />
             </article>
         )
 }
